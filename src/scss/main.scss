@@ -1,0 +1,59 @@
+@import "./abstracts/variables";
+
+.container {
+	width: 85%;
+	margin: 0 auto;
+}
+.wrapper {
+	color: $color-primary;
+	border-radius: 1rem;
+	background-color: $color-white;
+}
+
+.btn {
+	background-color: transparent;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&__icon {
+		width: 3rem;
+		height: 3rem;
+		border-radius: 50%;
+		border: 1px solid $color-primary-light-2;
+		position: relative;
+	}
+
+	&__icon-img {
+		width: 1.2rem;
+		object-fit: contain;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		&--close {
+			filter: brightness(0) saturate(100%) invert(43%) sepia(12%)
+				saturate(3962%) hue-rotate(177deg) brightness(96%) contrast(92%);
+		}
+	}
+
+	&__text {
+		font-weight: 600;
+		color: $color-primary-light-2;
+		display: inline-block;
+		margin: 1rem 0;
+	}
+
+	&--disabled {
+		// filter: brightness(0) saturate(100%) invert(86%) sepia(88%) saturate(0%)
+		// 	hue-rotate(178deg) brightness(86%) contrast(87%);
+		filter: grayscale(60%);
+		opacity: 0.6;
+
+		&:hover {
+			cursor: not-allowed;
+		}
+	}
+}
